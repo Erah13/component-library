@@ -11,6 +11,7 @@ import RatingShowcase from './components/RatingShowcase'
 import ChipShowcase from './components/ChipShowcase'
 import DateTimePickerShowcase from './components/DateTimePickerShowcase'
 import RadioShowcase from './components/RadioShowcase'
+import CardShowcase from './components/CardShowcase'
 
 function Navigation() {
   const navigate = useNavigate()
@@ -76,6 +77,7 @@ function App() {
             <Route path="/components/chip" element={<ChipShowcase />} />
             <Route path="/components/datetimepicker" element={<DateTimePickerShowcase />} />
             <Route path="/components/radio" element={<RadioShowcase />} />
+            <Route path="/components/card" element={<CardShowcase />} />
           </Routes>
         </Box>
       </Box>

@@ -7,7 +7,6 @@ import {
   Card,
   CardContent,
   CardActionArea,
-  Button,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import SmartButtonIcon from '@mui/icons-material/SmartButton';
@@ -19,6 +18,7 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import StyleIcon from '@mui/icons-material/Style';
 import DateRangeIcon from '@mui/icons-material/DateRange';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
 
 interface ComponentCard {
   id: string;
@@ -100,6 +100,13 @@ const Home: React.FC = () => {
       description: 'Radio buttons allow users to select one option from a set.',
       path: '/components/radio',
       icon: <RadioButtonCheckedIcon sx={{ fontSize: 48 }} aria-hidden="true" />,
+    },
+    {
+      id: 'card',
+      title: 'Card',
+      description: 'Cards contain content and actions about a single subject.',
+      path: '/components/card',
+      icon: <CreditCardIcon sx={{ fontSize: 48 }} aria-hidden="true" />,
     },
     // More components will be added here as we create them
   ];
@@ -214,61 +221,7 @@ const Home: React.FC = () => {
                 </CardActionArea>
               </Card>
             ))}
-
-            {/* Coming Soon Placeholder Cards */}
-            {['Slider', 'Autocomplete', 'Progress', 'Badge', 'Tooltip', 'Dialog'].map((name, index) => (
-              <Card
-                key={`coming-${index}`}
-                elevation={0}
-                sx={{
-                  height: '100%',
-                  border: `1px dashed ${theme.palette.divider}`,
-                  opacity: 0.6,
-                }}
-              >
-                <CardContent sx={{ p: theme.spacing(3), textAlign: 'center' }}>
-                  <Typography
-                    variant="h5"
-                    component="h3"
-                    gutterBottom
-                    sx={{ fontWeight: 600 }}
-                  >
-                    {name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Coming Soon...
-                  </Typography>
-                </CardContent>
-              </Card>
-            ))}
           </Box>
-        </Box>
-
-        {/* Quick Actions Section */}
-        <Box
-          sx={{
-            textAlign: 'center',
-            py: theme.spacing(6),
-            px: theme.spacing(3),
-            background: theme.palette.background.paper,
-            borderRadius: theme.spacing(2),
-            border: `1px solid ${theme.palette.divider}`,
-          }}
-        >
-          <Typography variant="h4" gutterBottom sx={{ fontWeight: 600 }}>
-            Get Started
-          </Typography>
-          <Typography variant="body1" color="text.secondary" sx={{ mb: theme.spacing(3) }}>
-            Click on any component card above to explore examples and implementations
-          </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            onClick={() => handleNavigate('/components/button')}
-            sx={{ px: theme.spacing(4), py: theme.spacing(1.5) }}
-          >
-            Explore Button Component
-          </Button>
         </Box>
       </Container>
     </Box>
