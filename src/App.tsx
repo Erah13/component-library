@@ -1,34 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Box, AppBar, Toolbar, Typography, Button } from '@mui/material'
+import { useNavigate, useLocation } from 'react-router-dom'
+import Home from './pages/Home'
+import ButtonShowcase from './components/ButtonShowcase'
+import CheckboxShowcase from './components/CheckboxShowcase'
+import TextFieldShowcase from './components/TextFieldShowcase'
+import SelectShowcase from './components/SelectShowcase'
+import SwitchShowcase from './components/SwitchShowcase'
 
-function App() {
-  const [count, setCount] = useState(0)
+function Navigation() {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const isHome = location.pathname === '/'
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <AppBar position="sticky" elevation={1}>
+      <Toolbar>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1, cursor: 'pointer' }}
+          onClick={() => navigate('/')}
+        >
+          Component Library
+        </Typography>
+        {!isHome && (
+          <Button color="inherit" onClick={() => navigate('/')}>
+            Home
+          </Button>
+        )}
+      </Toolbar>
+    </AppBar>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        {/* Skip to main content link for keyboard navigation */}
+        <Box
+          component="a"
+          href="#main-content"
+          sx={{
+            position: 'absolute',
+            left: '-9999px',
+            zIndex: 999,
+            padding: '1em',
+            backgroundColor: 'primary.main',
+            color: 'primary.contrastText',
+            textDecoration: 'none',
+            '&:focus': {
+              left: '50%',
+              transform: 'translateX(-50%)',
+              top: '1em',
+            },
+          }}
+        >
+          Skip to main content
+        </Box>
+        <Navigation />
+        <Box id="main-content" component="main" role="main" sx={{ flexGrow: 1 }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/components/button" element={<ButtonShowcase />} />
+            <Route path="/components/checkbox" element={<CheckboxShowcase />} />
+            <Route path="/components/textfield" element={<TextFieldShowcase />} />
+            <Route path="/components/select" element={<SelectShowcase />} />
+            <Route path="/components/switch" element={<SwitchShowcase />} />
+          </Routes>
+        </Box>
+      </Box>
+    </Router>
   )
 }
 

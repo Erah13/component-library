@@ -49,6 +49,55 @@ When fetching from Figma MCP:
 - Avoid inline styles
 - Use MUI's emotion-based styling
 
+### 9. Accessibility (WCAG 2.2 AA Compliance)
+All components and pages MUST meet WCAG 2.2 Level AA standards:
+
+#### Color and Contrast
+- Text contrast ratio: minimum 4.5:1 for normal text (< 18pt or < 14pt bold)
+- Large text contrast ratio: minimum 3:1 for text ≥ 18pt or ≥ 14pt bold
+- UI components and graphical objects: minimum 3:1 contrast ratio
+- Never rely on color alone to convey information
+
+#### Keyboard Navigation
+- All interactive elements must be keyboard accessible
+- Logical tab order through page content
+- Visible focus indicators on all focusable elements
+- No keyboard traps
+- Skip navigation links for repetitive content
+
+#### Form Accessibility
+- All form inputs must have associated labels
+- Use proper ARIA labels when visual labels aren't sufficient
+- Provide clear error messages and validation feedback
+- Use `aria-describedby` for helper text and errors
+- Group related form controls with `fieldset` and `legend`
+
+#### Semantic HTML and ARIA
+- Use semantic HTML elements (`button`, `nav`, `main`, `article`, etc.)
+- Add ARIA labels for icon-only buttons: `aria-label="descriptive text"`
+- Use `aria-labelledby` and `aria-describedby` appropriately
+- Ensure proper heading hierarchy (h1 → h2 → h3)
+- Use ARIA live regions for dynamic content updates
+
+#### Interactive Elements
+- Minimum touch target size: 24x24 CSS pixels (preferably 44x44)
+- Sufficient spacing between interactive elements
+- Clear indication of current state (selected, active, disabled)
+- Provide text alternatives for icon-only controls
+
+#### Content and Structure
+- Meaningful page titles
+- Clear and descriptive link text (avoid "click here")
+- Alternative text for informative images
+- Proper document structure and landmarks
+- Readable and understandable content
+
+#### Testing Requirements
+- Test with keyboard only (no mouse)
+- Test with screen reader (VoiceOver, NVDA, or JAWS)
+- Verify color contrast with automated tools
+- Check focus order and visibility
+
 ## Example Component Structure
 
 ```typescript
