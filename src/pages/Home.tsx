@@ -15,6 +15,10 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
 import ChecklistRtlIcon from '@mui/icons-material/ChecklistRtl';
 import ToggleOnIcon from '@mui/icons-material/ToggleOn';
+import StarRateIcon from '@mui/icons-material/StarRate';
+import StyleIcon from '@mui/icons-material/Style';
+import DateRangeIcon from '@mui/icons-material/DateRange';
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 
 interface ComponentCard {
   id: string;
@@ -68,6 +72,34 @@ const Home: React.FC = () => {
       description: 'Switches toggle the state of a single setting on or off.',
       path: '/components/switch',
       icon: <ToggleOnIcon sx={{ fontSize: 48 }} aria-hidden="true" />,
+    },
+    {
+      id: 'rating',
+      title: 'Rating',
+      description: 'Ratings provide insight into opinions and experiences.',
+      path: '/components/rating',
+      icon: <StarRateIcon sx={{ fontSize: 48 }} aria-hidden="true" />,
+    },
+    {
+      id: 'chip',
+      title: 'Chip',
+      description: 'Chips are compact elements representing input, attribute, or action.',
+      path: '/components/chip',
+      icon: <StyleIcon sx={{ fontSize: 48 }} aria-hidden="true" />,
+    },
+    {
+      id: 'datetimepicker',
+      title: 'Date & Time Picker',
+      description: 'Date and Time pickers for selecting dates and times.',
+      path: '/components/datetimepicker',
+      icon: <DateRangeIcon sx={{ fontSize: 48 }} aria-hidden="true" />,
+    },
+    {
+      id: 'radio',
+      title: 'Radio Button',
+      description: 'Radio buttons allow users to select one option from a set.',
+      path: '/components/radio',
+      icon: <RadioButtonCheckedIcon sx={{ fontSize: 48 }} aria-hidden="true" />,
     },
     // More components will be added here as we create them
   ];
@@ -184,7 +216,7 @@ const Home: React.FC = () => {
             ))}
 
             {/* Coming Soon Placeholder Cards */}
-            {['Radio', 'Slider', 'Autocomplete', 'DatePicker', 'Rating'].map((name, index) => (
+            {['Slider', 'Autocomplete', 'Progress', 'Badge', 'Tooltip', 'Dialog'].map((name, index) => (
               <Card
                 key={`coming-${index}`}
                 elevation={0}

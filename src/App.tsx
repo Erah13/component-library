@@ -7,6 +7,10 @@ import CheckboxShowcase from './components/CheckboxShowcase'
 import TextFieldShowcase from './components/TextFieldShowcase'
 import SelectShowcase from './components/SelectShowcase'
 import SwitchShowcase from './components/SwitchShowcase'
+import RatingShowcase from './components/RatingShowcase'
+import ChipShowcase from './components/ChipShowcase'
+import DateTimePickerShowcase from './components/DateTimePickerShowcase'
+import RadioShowcase from './components/RadioShowcase'
 
 function Navigation() {
   const navigate = useNavigate()
@@ -68,6 +72,10 @@ function App() {
             <Route path="/components/textfield" element={<TextFieldShowcase />} />
             <Route path="/components/select" element={<SelectShowcase />} />
             <Route path="/components/switch" element={<SwitchShowcase />} />
+            <Route path="/components/rating" element={<RatingShowcase />} />
+            <Route path="/components/chip" element={<ChipShowcase />} />
+            <Route path="/components/datetimepicker" element={<DateTimePickerShowcase />} />
+            <Route path="/components/radio" element={<RadioShowcase />} />
           </Routes>
         </Box>
       </Box>
