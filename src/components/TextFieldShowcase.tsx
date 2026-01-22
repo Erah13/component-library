@@ -41,7 +41,7 @@ const TextFieldShowcase: React.FC = () => {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ py: theme.spacing(4) }}>
+    <Container sx={{ py: theme.spacing(4) }}>
       {/* Page Header */}
       <Box component="section" aria-labelledby="textfield-page-title" sx={{ mb: theme.spacing(6) }}>
         <Typography id="textfield-page-title" variant="h2" component="h1" gutterBottom>

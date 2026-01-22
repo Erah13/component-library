@@ -89,6 +89,45 @@ const theme = createTheme({
         },
       },
     },
+    MuiContainer: {
+      defaultProps: {
+        maxWidth: false,
+      },
+      styleOverrides: {
+        root: {
+          maxWidth: '100% !important',
+          paddingLeft: 32,
+          paddingRight: 32,
+        },
+      },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          '& .MuiToolbar-root': {
+            maxWidth: 'none !important',
+            width: '100%',
+            paddingLeft: '32px',
+            paddingRight: '32px',
+          },
+        },
+      },
+    },
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          maxWidth: 'none !important',
+          minWidth: 'unset !important',
+          width: '100%',
+          paddingLeft: '32px !important',
+          paddingRight: '32px !important',
+          '@media (min-width: 600px)': {
+            minWidth: 'unset !important',
+            maxWidth: 'none !important',
+          },
+        },
+      },
+    },
   },
 });
 

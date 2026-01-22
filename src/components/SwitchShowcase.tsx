@@ -40,7 +40,7 @@ const SwitchShowcase: React.FC = () => {
   const { wifi, bluetooth, location } = state;
 
   return (
-    <Container maxWidth="lg" sx={{ py: theme.spacing(4) }}>
+    <Container sx={{ py: theme.spacing(4) }}>
       {/* Page Header */}
       <Box component="section" aria-labelledby="switch-page-title" sx={{ mb: theme.spacing(6) }}>
         <Typography id="switch-page-title" variant="h2" component="h1" gutterBottom>

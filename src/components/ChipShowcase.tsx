@@ -35,7 +35,7 @@ const ChipShowcase: React.FC = () => {
   };
 
   return (
-    <Box sx={{ p: theme.spacing(3) }}>
+    <Box sx={{ p: 4, py: theme.spacing(4) }}>
       <Typography 
         variant="h3" 
         component="h1" 

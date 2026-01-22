@@ -26,7 +26,7 @@ const DateTimePickerShowcase: React.FC = () => {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Box sx={{ p: theme.spacing(3) }}>
+      <Box sx={{ p: 4, py: theme.spacing(4) }}>
         <Typography 
           variant="h3" 
           component="h1" 
@@ -74,15 +74,18 @@ const DateTimePickerShowcase: React.FC = () => {
               label="Basic Date Picker"
               value={dateValue}
               onChange={(newValue) => setDateValue(newValue)}
+              format="DD.MM.YYYY"
             />
             <DatePicker
               label="Read Only"
               value={dateValue}
               readOnly
+              format="DD.MM.YYYY"
             />
             <DatePicker
               label="Disabled"
               disabled
+              format="DD.MM.YYYY"
             />
           </Stack>
         </Paper>
@@ -113,18 +116,21 @@ const DateTimePickerShowcase: React.FC = () => {
               views={['year', 'month', 'day']}
               value={dateValue}
               onChange={(newValue) => setDateValue(newValue)}
+              format="DD.MM.YYYY"
             />
             <DatePicker
               label="Year and Month"
               views={['year', 'month']}
               value={dateValue}
               onChange={(newValue) => setDateValue(newValue)}
+              format="MM.YYYY"
             />
             <DatePicker
               label="Month and Date"
               views={['month', 'day']}
               value={dateValue}
               onChange={(newValue) => setDateValue(newValue)}
+              format="DD.MM"
             />
           </Stack>
         </Paper>
@@ -154,11 +160,13 @@ const DateTimePickerShowcase: React.FC = () => {
               label="Desktop Date Picker"
               value={dateValue}
               onChange={(newValue) => setDateValue(newValue)}
+              format="DD.MM.YYYY"
             />
             <MobileDatePicker
               label="Mobile Date Picker"
               value={dateValue}
               onChange={(newValue) => setDateValue(newValue)}
+              format="DD.MM.YYYY"
             />
           </Stack>
         </Paper>
@@ -226,21 +234,25 @@ const DateTimePickerShowcase: React.FC = () => {
               label="Date & Time Picker"
               value={dateTimeValue}
               onChange={(newValue) => setDateTimeValue(newValue)}
+              format="DD.MM.YYYY HH:mm"
             />
             <DateTimePicker
               label="Date & Time (12h)"
               value={dateTimeValue}
               onChange={(newValue) => setDateTimeValue(newValue)}
+              format="DD.MM.YYYY hh:mm A"
               ampm
             />
             <DateTimePicker
               label="Read Only"
               value={dateTimeValue}
               readOnly
+              format="DD.MM.YYYY HH:mm"
             />
             <DateTimePicker
               label="Disabled"
               disabled
+              format="DD.MM.YYYY HH:mm"
             />
           </Stack>
         </Paper>
@@ -272,6 +284,7 @@ const DateTimePickerShowcase: React.FC = () => {
               onChange={(newValue) => setDateValue(newValue)}
               minDate={dayjs().subtract(7, 'day')}
               maxDate={dayjs().add(7, 'day')}
+              format="DD.MM.YYYY"
               slotProps={{
                 textField: {
                   helperText: 'Select a date within one week from today',
@@ -283,6 +296,7 @@ const DateTimePickerShowcase: React.FC = () => {
               value={dateValue}
               onChange={(newValue) => setDateValue(newValue)}
               disablePast
+              format="DD.MM.YYYY"
               slotProps={{
                 textField: {
                   helperText: 'Past dates are disabled',
@@ -294,6 +308,7 @@ const DateTimePickerShowcase: React.FC = () => {
               value={dateValue}
               onChange={(newValue) => setDateValue(newValue)}
               disableFuture
+              format="DD.MM.YYYY"
               slotProps={{
                 textField: {
                   helperText: 'Future dates are disabled',
@@ -308,6 +323,7 @@ const DateTimePickerShowcase: React.FC = () => {
                 const day = date.day();
                 return day === 0 || day === 6;
               }}
+              format="DD.MM.YYYY"
               slotProps={{
                 textField: {
                   helperText: 'Weekends are disabled',
@@ -339,10 +355,10 @@ const DateTimePickerShowcase: React.FC = () => {
           </Typography>
           <Stack spacing={3}>
             <DatePicker
-              label="MM/DD/YYYY"
+              label="DD.MM.YYYY"
               value={dateValue}
               onChange={(newValue) => setDateValue(newValue)}
-              format="MM/DD/YYYY"
+              format="DD.MM.YYYY"
             />
             <DatePicker
               label="DD/MM/YYYY"
@@ -351,16 +367,16 @@ const DateTimePickerShowcase: React.FC = () => {
               format="DD/MM/YYYY"
             />
             <DatePicker
-              label="YYYY-MM-DD"
+              label="DD-MM-YYYY"
               value={dateValue}
               onChange={(newValue) => setDateValue(newValue)}
-              format="YYYY-MM-DD"
+              format="DD-MM-YYYY"
             />
             <DatePicker
-              label="MMM DD, YYYY"
+              label="DD MMM YYYY"
               value={dateValue}
               onChange={(newValue) => setDateValue(newValue)}
-              format="MMM DD, YYYY"
+              format="DD MMM YYYY"
             />
           </Stack>
         </Paper>
@@ -421,6 +437,7 @@ const DateTimePickerShowcase: React.FC = () => {
               label="Custom Colors"
               value={dateValue}
               onChange={(newValue) => setDateValue(newValue)}
+              format="DD.MM.YYYY"
               slotProps={{
                 textField: {
                   sx: {
@@ -440,6 +457,7 @@ const DateTimePickerShowcase: React.FC = () => {
               label="Full Width"
               value={dateTimeValue}
               onChange={(newValue) => setDateTimeValue(newValue)}
+              format="DD.MM.YYYY HH:mm"
               slotProps={{
                 textField: {
                   fullWidth: true,
@@ -477,6 +495,7 @@ const DateTimePickerShowcase: React.FC = () => {
               label="Birth Date"
               value={dateValue}
               onChange={(newValue) => setDateValue(newValue)}
+              format="DD.MM.YYYY"
               slotProps={{
                 textField: {
                   helperText: 'Select your date of birth',
@@ -488,6 +507,7 @@ const DateTimePickerShowcase: React.FC = () => {
               label="Appointment Time"
               value={timeValue}
               onChange={(newValue) => setTimeValue(newValue)}
+              format="HH:mm"
               slotProps={{
                 textField: {
                   helperText: 'Choose your preferred appointment time',
@@ -536,6 +556,7 @@ const DateTimePickerShowcase: React.FC = () => {
                 value={dateValue}
                 onChange={(newValue) => setDateValue(newValue)}
                 disablePast
+                format="DD.MM.YYYY"
                 slotProps={{
                   textField: {
                     fullWidth: true,
@@ -549,6 +570,7 @@ const DateTimePickerShowcase: React.FC = () => {
                   label="Start Time"
                   value={timeValue}
                   onChange={(newValue) => setTimeValue(newValue)}
+                  format="HH:mm"
                   slotProps={{
                     textField: {
                       fullWidth: true,
@@ -561,6 +583,7 @@ const DateTimePickerShowcase: React.FC = () => {
                   value={dayjs(timeValue).add(1, 'hour')}
                   onChange={(newValue) => setTimeValue(newValue)}
                   minTime={timeValue || undefined}
+                  format="HH:mm"
                   slotProps={{
                     textField: {
                       fullWidth: true,

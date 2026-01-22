@@ -68,7 +68,7 @@ const SelectShowcase: React.FC = () => {
   ];
 
   return (
-    <Container maxWidth="lg" sx={{ py: theme.spacing(4) }}>
+    <Container sx={{ py: theme.spacing(4) }}>
       {/* Page Header */}
       <Box component="section" aria-labelledby="select-page-title" sx={{ mb: theme.spacing(6) }}>
         <Typography id="select-page-title" variant="h2" component="h1" gutterBottom>

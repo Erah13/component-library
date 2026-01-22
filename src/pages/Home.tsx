@@ -123,7 +123,7 @@ const Home: React.FC = () => {
         py: theme.spacing(8),
       }}
     >
-      <Container maxWidth="lg">
+      <Container>
         {/* Hero Section */}
         <Box sx={{ textAlign: 'center', mb: theme.spacing(8) }}>
           <Typography
